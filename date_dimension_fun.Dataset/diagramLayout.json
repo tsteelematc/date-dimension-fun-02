@@ -1,0 +1,46 @@
+{
+  "version": "1.1.0",
+  "diagrams": [
+    {
+      "ordinal": 0,
+      "scrollPosition": {
+        "x": 46.399999999999977,
+        "y": 0
+      },
+      "nodes": [
+        {
+          "location": {
+            "x": 0,
+            "y": 0
+          },
+          "nodeIndex": "date_dim",
+          "size": {
+            "height": 225,
+            "width": 283
+          },
+          "zIndex": 0
+        },
+        {
+          "location": {
+            "x": 375.4,
+            "y": 0
+          },
+          "nodeIndex": "important_facts",
+          "size": {
+            "height": 226,
+            "width": 286
+          },
+          "zIndex": 0
+        }
+      ],
+      "name": "All tables",
+      "zoomValue": 100,
+      "pinKeyFieldsToTop": false,
+      "showExtraHeaderInfo": false,
+      "hideKeyFieldsWhenCollapsed": false,
+      "tablesLocked": false
+    }
+  ],
+  "selectedDiagram": "All tables",
+  "defaultDiagram": "All tables"
+}

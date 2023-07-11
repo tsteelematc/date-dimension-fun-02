@@ -1,0 +1,126 @@
+{
+  "config": "{\"version\":\"5.43\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY23SU04\",\"version\":\"5.43\",\"type\":2}},\"activeSectionIndex\":1,\"defaultDrillFilterOtherVisuals\":true,\"slowDataSourceSettings\":{\"isCrossHighlightingDisabled\":false,\"isSlicerSelectionsButtonEnabled\":false,\"isFilterSelectionsButtonEnabled\":false,\"isFieldWellButtonEnabled\":false,\"isApplyAllButtonEnabled\":false},\"linguisticSchemaSyncVersion\":2,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}],\"outspacePane\":[{\"properties\":{\"expanded\":{\"expr\":{\"Literal\":{\"Value\":\"false\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY23SU04",
+            "path": "BaseThemes/CY23SU04.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSection",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"1373154237d1696a6cef\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1000,\"y\":313.6,\"z\":3000,\"width\":280,\"height\":280}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"important_facts.Start/End in Spring Break\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(important_facts.Student)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"i\",\"Entity\":\"important_facts\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Start/End in Spring Break\"},\"Name\":\"important_facts.Start/End in Spring Break\",\"NativeReferenceName\":\"Start/End in Spring Break\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Student\"}},\"Function\":5},\"Name\":\"CountNonNull(important_facts.Student)\",\"NativeReferenceName\":\"Count of Student\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Student\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 280.00,
+          "width": 280.00,
+          "x": 1000.00,
+          "y": 313.60,
+          "z": 3000.00
+        },
+        {
+          "config": "{\"name\":\"13ec6af4dd10f217f319\",\"layouts\":[{\"id\":0,\"position\":{\"x\":311.6521739130435,\"y\":313.04347826086956,\"z\":2000,\"width\":281.04347826086956,\"height\":279.6521739130435}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"date_dim.Spring Break\",\"active\":true}],\"Y\":[{\"queryRef\":\"important_facts.Student Count End Prediction Date\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"date_dim\",\"Type\":0},{\"Name\":\"i\",\"Entity\":\"important_facts\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Spring Break\"},\"Name\":\"date_dim.Spring Break\",\"NativeReferenceName\":\"Spring Break\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Student Count End Prediction Date\"},\"Name\":\"important_facts.Student Count End Prediction Date\",\"NativeReferenceName\":\"Student Count End Prediction Date\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Student Count End Prediction Date\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 279.65,
+          "width": 281.04,
+          "x": 311.65,
+          "y": 313.04,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"178315365e4c01467620\",\"layouts\":[{\"id\":0,\"position\":{\"x\":603,\"y\":0,\"width\":280,\"height\":280,\"z\":4000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"important_facts.Student\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"i\",\"Entity\":\"important_facts\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Student\"},\"Name\":\"important_facts.Student\",\"NativeReferenceName\":\"Student\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 280.00,
+          "width": 280.00,
+          "x": 603.00,
+          "y": 0.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"73c3c2134b08d75a3bcd\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":313.04347826086956,\"z\":1000,\"width\":281.04347826086956,\"height\":279.6521739130435}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"date_dim.Spring Break\",\"active\":true}],\"Y\":[{\"queryRef\":\"important_facts.Student Count Start Prediction Date\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"date_dim\",\"Type\":0},{\"Name\":\"i\",\"Entity\":\"important_facts\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Spring Break\"},\"Name\":\"date_dim.Spring Break\",\"NativeReferenceName\":\"Spring Break\"},{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Student Count Start Prediction Date\"},\"Name\":\"important_facts.Student Count Start Prediction Date\",\"NativeReferenceName\":\"Student Count Start Prediction Date\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Measure\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Student Count Start Prediction Date\"}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 279.65,
+          "width": 281.04,
+          "x": 0.00,
+          "y": 313.04,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"ef9eebea7fe6b1330fd3\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":0,\"width\":280,\"height\":280,\"z\":0}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"date_dim.Spring Break\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(important_facts.Student)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"d\",\"Entity\":\"date_dim\",\"Type\":0},{\"Name\":\"i\",\"Entity\":\"important_facts\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"d\"}},\"Property\":\"Spring Break\"},\"Name\":\"date_dim.Spring Break\",\"NativeReferenceName\":\"Spring Break\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Student\"}},\"Function\":5},\"Name\":\"CountNonNull(important_facts.Student)\",\"NativeReferenceName\":\"Count of Student\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Student\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 280.00,
+          "width": 280.00,
+          "x": 10.00,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Duplicate of Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ReportSectionca0cc58dfec2b7f6eb19",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"19b6a0130c90400484dd\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":313.04347826086956,\"z\":1000,\"width\":281.04347826086956,\"height\":279.6521739130435}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"important_facts.Start in Spring Break\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(important_facts.Student)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"i\",\"Entity\":\"important_facts\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Start in Spring Break\"},\"Name\":\"important_facts.Start in Spring Break\",\"NativeReferenceName\":\"Start in Spring Break\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Student\"}},\"Function\":5},\"Name\":\"CountNonNull(important_facts.Student)\",\"NativeReferenceName\":\"Count of Student\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Student\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 279.65,
+          "width": 281.04,
+          "x": 0.00,
+          "y": 313.04,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"30fd2da59c16f748c97a\",\"layouts\":[{\"id\":0,\"position\":{\"x\":311.6521739130435,\"y\":313.04347826086956,\"z\":2000,\"width\":281.04347826086956,\"height\":279.6521739130435}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"important_facts.End in Spring Break\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(important_facts.Student)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"i\",\"Entity\":\"important_facts\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"End in Spring Break\"},\"Name\":\"important_facts.End in Spring Break\",\"NativeReferenceName\":\"End in Spring Break\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Student\"}},\"Function\":5},\"Name\":\"CountNonNull(important_facts.Student)\",\"NativeReferenceName\":\"Count of Student\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Student\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 279.65,
+          "width": 281.04,
+          "x": 311.65,
+          "y": 313.04,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"50a75fabafd5e44a8a5e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":603,\"y\":0,\"width\":280,\"height\":280,\"z\":4000}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"important_facts.Student\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"i\",\"Entity\":\"important_facts\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Student\"},\"Name\":\"important_facts.Student\",\"NativeReferenceName\":\"Student\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 280.00,
+          "width": 280.00,
+          "x": 603.00,
+          "y": 0.00,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"58c734e646315f85e123\",\"layouts\":[{\"id\":0,\"position\":{\"x\":1000,\"y\":313.6,\"z\":3000,\"width\":280,\"height\":280}}],\"singleVisual\":{\"visualType\":\"donutChart\",\"projections\":{\"Category\":[{\"queryRef\":\"important_facts.Start and End in Spring Break\",\"active\":true}],\"Y\":[{\"queryRef\":\"CountNonNull(important_facts.Student)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"i\",\"Entity\":\"important_facts\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Start and End in Spring Break\"},\"Name\":\"important_facts.Start and End in Spring Break\",\"NativeReferenceName\":\"Start and End in Spring Break\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Student\"}},\"Function\":5},\"Name\":\"CountNonNull(important_facts.Student)\",\"NativeReferenceName\":\"Count of Student\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"i\"}},\"Property\":\"Student\"}},\"Function\":5}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 280.00,
+          "width": 280.00,
+          "x": 1000.00,
+          "y": 313.60,
+          "z": 3000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}

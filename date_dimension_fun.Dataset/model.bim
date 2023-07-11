@@ -1,0 +1,334 @@
+{
+  "compatibilityLevel": 1550,
+  "model": {
+    "annotations": [
+      {
+        "name": "PBI_QueryOrder",
+        "value": "[\"date_dim\",\"important_facts\"]"
+      },
+      {
+        "name": "__PBI_TimeIntelligenceEnabled",
+        "value": "0"
+      },
+      {
+        "name": "PBIDesktopVersion",
+        "value": "2.118.1063.0 (23.06)"
+      },
+      {
+        "name": "PBI_ProTooling",
+        "value": "[\"DevMode\"]"
+      }
+    ],
+    "culture": "en-US",
+    "cultures": [
+      {
+        "name": "en-US",
+        "linguisticMetadata": {
+          "content": {
+            "DynamicImprovement": "HighConfidence",
+            "Language": "en-US",
+            "Version": "1.0.0"
+          },
+          "contentType": "json"
+        }
+      }
+    ],
+    "dataAccessOptions": {
+      "legacyRedirects": true,
+      "returnErrorValuesAsNull": true
+    },
+    "defaultPowerBIDataSourceVersion": "powerBI_V3",
+    "relationships": [
+      {
+        "name": "a05a6e38-cfa6-41ea-838e-ac64209976f9",
+        "fromColumn": "Start Prediction",
+        "fromTable": "important_facts",
+        "toColumn": "Date",
+        "toTable": "date_dim"
+      },
+      {
+        "name": "11e18d1c-2a10-4bf3-92d6-28343ab8fb34",
+        "fromColumn": "End Prediction",
+        "fromTable": "important_facts",
+        "isActive": false,
+        "toColumn": "Date",
+        "toTable": "date_dim"
+      }
+    ],
+    "sourceQueryCulture": "en-US",
+    "tables": [
+      {
+        "name": "date_dim",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "Date",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "5a48867c-3aab-42fd-be7e-29c105878e85",
+            "sourceColumn": "Date",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Spring Break",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "int64",
+            "formatString": "0",
+            "lineageTag": "68bc7a6b-ac4e-4bee-93dd-0140869a8dfd",
+            "sourceColumn": "Spring Break",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "efa9a479-c2bf-4642-8d71-14974f307c1e",
+        "partitions": [
+          {
+            "name": "date_dim-9fd08222-d27c-46a8-bf1e-f511a517050e",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(Web.Contents(\"https://raw.githubusercontent.com/tsteelematc/date-dimension-fun/main/week-09-original-demo/date_dim.csv\"),[Delimiter=\",\", Columns=2, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Date\", type date}, {\"Spring Break\", Int64.Type}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      },
+      {
+        "name": "important_facts",
+        "annotations": [
+          {
+            "name": "PBI_ResultType",
+            "value": "Table"
+          }
+        ],
+        "columns": [
+          {
+            "name": "End Prediction",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "3a4c7921-abd7-4c1d-9677-2cf329afcedd",
+            "sourceColumn": "End Prediction",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "End in Spring Break",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "expression": "LOOKUPVALUE(date_dim[Spring Break], date_dim[Date], [End Prediction]) = 1",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "isDataTypeInferred": true,
+            "lineageTag": "693a9292-c4ad-4f0f-bc6f-e583a424702c",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Start Prediction",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              },
+              {
+                "name": "UnderlyingDateTimeDataType",
+                "value": "Date"
+              }
+            ],
+            "dataType": "dateTime",
+            "formatString": "Long Date",
+            "lineageTag": "551ec2e9-5d51-45bb-b821-3f4d99ecf4f9",
+            "sourceColumn": "Start Prediction",
+            "summarizeBy": "none"
+          },
+          {
+            "name": "Start and End in Spring Break",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "expression": "AND([Start in Spring Break], [End in Spring Break])",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "isDataTypeInferred": true,
+            "lineageTag": "1487953a-52b8-4bcb-94eb-5178e818b1e2",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Start in Spring Break",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "expression": "RELATED(date_dim[Spring Break]) = 1",
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "isDataTypeInferred": true,
+            "lineageTag": "f03327cb-f098-4b46-9c3f-a9efdcdf0696",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Start/End in Spring Break",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "boolean",
+            "expression": [
+              "",
+              "    AND(",
+              "        RELATED(",
+              "            date_dim[Spring Break]",
+              "        ) = 1",
+              "        , LOOKUPVALUE(",
+              "            date_dim[Spring Break]",
+              "            , date_dim[Date]",
+              "            , [End Prediction]",
+              "        ) = 1",
+              "    )"
+            ],
+            "formatString": "\"TRUE\";\"TRUE\";\"FALSE\"",
+            "isDataTypeInferred": true,
+            "lineageTag": "f74f6e87-ed43-4713-9f6b-b2459b042389",
+            "summarizeBy": "none",
+            "type": "calculated"
+          },
+          {
+            "name": "Student",
+            "annotations": [
+              {
+                "name": "SummarizationSetBy",
+                "value": "Automatic"
+              }
+            ],
+            "dataType": "string",
+            "lineageTag": "c5a51fea-a391-4621-8047-b2ad402840ea",
+            "sourceColumn": "Student",
+            "summarizeBy": "none"
+          }
+        ],
+        "lineageTag": "9e070fc9-dab2-4297-83c0-19429f365661",
+        "measures": [
+          {
+            "name": "Student Count End Prediction Date",
+            "expression": [
+              "CALCULATE(",
+              "    COUNT(",
+              "        important_facts[Student]",
+              "    )",
+              "    , USERELATIONSHIP(",
+              "        important_facts[End Prediction]",
+              "        , date_dim[Date]",
+              "    )",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "72f3b301-6b6c-404e-8ba9-32aa8c053c99"
+          },
+          {
+            "name": "Student Count Start Prediction Date",
+            "expression": [
+              "CALCULATE(",
+              "    COUNT(",
+              "        important_facts[Student]",
+              "    )",
+              "    , USERELATIONSHIP(",
+              "        important_facts[Start Prediction]",
+              "        , date_dim[Date]",
+              "    )",
+              ")"
+            ],
+            "formatString": "0",
+            "lineageTag": "f7d561f1-530e-4554-8f36-1cb60c7a4381"
+          },
+          {
+            "name": "Student Count End/Start Spring Break",
+            "expression": [
+              "",
+              "    VAR BothInSpringBreak = FILTER(",
+              "        important_facts",
+              "        , AND(",
+              "            RELATED(",
+              "                date_dim[Spring Break]",
+              "            ) = 1",
+              "            , LOOKUPVALUE(",
+              "                date_dim[Spring Break]",
+              "                , date_dim[Date]",
+              "                , [End Prediction]",
+              "            ) = 1",
+              "        )",
+              "    )",
+              "    RETURN",
+              "        COUNTROWS(BothInSpringBreak)"
+            ],
+            "formatString": "0",
+            "lineageTag": "300ac2cb-80ba-4989-8531-178a0e7c8853"
+          }
+        ],
+        "partitions": [
+          {
+            "name": "important_facts-5a7a21cb-8d12-4e5f-a8b0-a296d2c99155",
+            "mode": "import",
+            "source": {
+              "expression": [
+                "let",
+                "    Source = Csv.Document(Web.Contents(\"https://raw.githubusercontent.com/tsteelematc/date-dimension-fun/main/week-09-original-demo/important_facts.csv\"),[Delimiter=\",\", Columns=3, Encoding=65001, QuoteStyle=QuoteStyle.None]),",
+                "    #\"Promoted Headers\" = Table.PromoteHeaders(Source, [PromoteAllScalars=true]),",
+                "    #\"Changed Type\" = Table.TransformColumnTypes(#\"Promoted Headers\",{{\"Student\", type text}, {\"Start Prediction\", type date}, {\"End Prediction\", type date}})",
+                "in",
+                "    #\"Changed Type\""
+              ],
+              "type": "m"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "version": "1.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../date_dimension_fun.Dataset"
+    },
+    "byConnection": null
+  }
+}
